@@ -87,12 +87,13 @@ public class MainActivity extends AppCompatActivity {
             data = input.getText().toString();
             input.setText(data + "9");
         });
+        
         btnDot.setOnClickListener(v -> {
             data = input.getText().toString();
             if (data.isEmpty()) {
                 input.setText("");
             } else {
-                extracted(".");
+                stringFormat(".");
             }
         });
 
@@ -101,7 +102,7 @@ public class MainActivity extends AppCompatActivity {
             if (data.isEmpty()) {
                 input.setText(data + "+");
             } else {
-                extracted("+");
+                stringFormat("+");
             }
         });
 
@@ -110,7 +111,7 @@ public class MainActivity extends AppCompatActivity {
             if (data.isEmpty()) {
                 input.setText(data + "-");
             } else {
-                extracted("-");
+                stringFormat("-");
             }
         });
 
@@ -119,7 +120,7 @@ public class MainActivity extends AppCompatActivity {
             if (data.isEmpty()) {
                 input.setText("");
             } else {
-                extracted("*");
+                stringFormat("*");
             }
         });
 
@@ -128,7 +129,7 @@ public class MainActivity extends AppCompatActivity {
             if (data.isEmpty()) {
                 input.setText("");
             } else {
-                extracted("/");
+                stringFormat("/");
             }
         });
 
@@ -137,7 +138,7 @@ public class MainActivity extends AppCompatActivity {
             if (data.isEmpty()) {
                 input.setText("");
             } else {
-                extracted("%");
+                stringFormat("%");
             }
         });
 
@@ -187,7 +188,7 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
-    private void extracted(String c) {
+    private void stringFormat(String c) {
         StringBuilder stringBuilder = new StringBuilder(data);
         String check = stringBuilder.substring(data.length() - 1, data.length());
         if (check.contains("/") || check.contains("*")
