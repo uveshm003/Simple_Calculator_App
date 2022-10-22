@@ -92,101 +92,60 @@ public class MainActivity extends AppCompatActivity {
             if (data.isEmpty()) {
                 input.setText("");
             } else {
-                StringBuilder stringBuilder = new StringBuilder(data);
-                String check = stringBuilder.substring(data.length() - 1, data.length());
-                if (check.contains("/") || check.contains("*")
-                        || check.contains("-") || check.contains("+")
-                        || check.contains(".") || check.contains("%")) {
-                    input.setText(data);
-                } else {
-                    input.setText(data + ".");
-                }
+                extracted(".");
             }
         });
+
         btnPlus.setOnClickListener(v -> {
             data = input.getText().toString();
             if (data.isEmpty()) {
                 input.setText(data + "+");
             } else {
-                StringBuilder stringBuilder = new StringBuilder(data);
-                String check = stringBuilder.substring(data.length() - 1, data.length());
-                if (check.contains("/") || check.contains("*")
-                        || check.contains("-") || check.contains("+")
-                        || check.contains(".") || check.contains("%")) {
-                    input.setText(data);
-                } else {
-                    input.setText(data + "+");
-                }
+                extracted("+");
             }
         });
+
         btnMinus.setOnClickListener(v -> {
             data = input.getText().toString();
             if (data.isEmpty()) {
-                input.setText(data + "+");
+                input.setText(data + "-");
             } else {
-                StringBuilder stringBuilder = new StringBuilder(data);
-                String check = stringBuilder.substring(data.length() - 1, data.length());
-                if (check.contains("/") || check.contains("*")
-                        || check.contains("-") || check.contains("+")
-                        || check.contains(".") || check.contains("%")) {
-                    input.setText(data);
-                } else {
-                    input.setText(data + "-");
-                }
+                extracted("-");
             }
         });
+
         btnMul.setOnClickListener(v -> {
             data = input.getText().toString();
             if (data.isEmpty()) {
                 input.setText("");
             } else {
-                StringBuilder stringBuilder = new StringBuilder(data);
-                String check = stringBuilder.substring(data.length() - 1, data.length());
-                if (check.contains("/") || check.contains("*")
-                        || check.contains("-") || check.contains("+")
-                        || check.contains(".") || check.contains("%")) {
-                    input.setText(data);
-                } else {
-                    input.setText(data + "*");
-                }
+                extracted("*");
             }
         });
+
         btnDiv.setOnClickListener(v -> {
             data = input.getText().toString();
             if (data.isEmpty()) {
                 input.setText("");
             } else {
-                StringBuilder stringBuilder = new StringBuilder(data);
-                String check = stringBuilder.substring(data.length() - 1, data.length());
-                if (check.contains("/") || check.contains("*")
-                        || check.contains("-") || check.contains("+")
-                        || check.contains(".") || check.contains("%")) {
-                    input.setText(data);
-                } else {
-                    input.setText(data + "/");
-                }
+                extracted("/");
             }
         });
+
         btnModulo.setOnClickListener(v -> {
             data = input.getText().toString();
             if (data.isEmpty()) {
                 input.setText("");
             } else {
-                StringBuilder stringBuilder = new StringBuilder(data);
-                String check = stringBuilder.substring(data.length() - 1, data.length());
-                if (check.contains("/") || check.contains("*")
-                        || check.contains("-") || check.contains("+")
-                        || check.contains(".") || check.contains("%")) {
-                    input.setText(data);
-                } else {
-                    input.setText(data + "%");
-                }
+                extracted("%");
             }
         });
+
         btnAc.setOnClickListener(v -> {
             input.setText("");
             output.setText("");
         });
+
         btnEqual.setOnClickListener(v -> {
 
             data = input.getText().toString();
@@ -214,6 +173,7 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         });
+
         btnDelete.setOnClickListener(v -> {
             data = input.getText().toString();
             if (data.isEmpty()) {
@@ -225,5 +185,17 @@ public class MainActivity extends AppCompatActivity {
                 input.setText(data);
             }
         });
+    }
+
+    private void extracted(String c) {
+        StringBuilder stringBuilder = new StringBuilder(data);
+        String check = stringBuilder.substring(data.length() - 1, data.length());
+        if (check.contains("/") || check.contains("*")
+                || check.contains("-") || check.contains("+")
+                || check.contains(".") || check.contains("%")) {
+            input.setText(data);
+        } else {
+            input.setText(String.format("%s%s", data, c));
+        }
     }
 }
