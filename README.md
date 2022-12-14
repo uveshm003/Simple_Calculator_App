@@ -2,9 +2,8 @@
 
 Basic Calculator App made using Android Studio & Java.
 
-![Application Preview](https://github.com/uveshm003/Java-100-days/blob/main/calc_1.jpeg)
+<img src="https://github.com/uveshm003/Java-100-days/blob/main/calc_1.jpeg" style=" width:250px ; height:400px "  >  &nbsp;&nbsp;&nbsp;   <img src="https://github.com/uveshm003/Java-100-days/blob/main/calc_2.jpeg" style=" width:250px ; height:400px "  > &nbsp;&nbsp; &nbsp; <img src="https://github.com/uveshm003/Java-100-days/blob/main/calc_3.jpeg" style=" width:250px ; height:400px "  >
 
-![Application Preview](https://github.com/uveshm003/Java-100-days/blob/main/calc_2.jpeg)
 
-![Application Preview](https://github.com/uveshm003/Java-100-days/blob/main/calc_3.jpeg)
+
 
